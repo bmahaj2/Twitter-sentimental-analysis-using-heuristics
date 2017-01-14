@@ -1,0 +1,106 @@
+Report for part B
+
+Submitted by: Bhavya Mahajan
+NetID:        bmahaj2
+
+
+#################################################################################################################################################################
+
+Determine the sentiment of each tweet
+
+1)Read AFINN-111.txt file and streaming_output_full.txt file.
+2)For each line in AFINN-111.txt file containing word or phrase followed by sentiment file store it in dictionary scores with term as key and score as value.
+3)Get the text of each text form streaming_output_full.txt file and append it to tweet_text list.
+4)Take the initial value of sum as 0 and split each text of the tweet by space and check if that word exits in scores dictionary. if it exits then get the corresponding score and add it to sum if it doesnt exist then add 0 to sum. This way get the sum for each tweet and store it in dictionary.
+5)Now print the tweets with top 10 sentiment scores and bottom 10 sentiment tweets along with their corresponding sentiment scores.
+
+Top 10 and bottom 10 tweets with their sentiment scores are:
+
+15.0: happy birthday beautiful @jennyfuur i hope your day is amazing jungkook and i love you! ??
+15.0: happy easter everyone! hope you have a great day &amp; get lots of wonderful chocolate too! lol #easterjoy #yummy
+12.0: #happyeaster  beautiful ???? @poppymontgomery  hope you have an amazing easter sunday xoxox love you always ???????????????????? https://t.co/elxxjzf4rb
+12.0: rt @coachmotto: a commitment to winning means a commitment to the work that winning requires.
+11.0: rt @diamondandsilk: happy easter y'all, @diamondandsilk hope your day is full of joy and happiness. today, "be the great in your day! https…
+10.0: rt @shwomenstore: happy easter! have an amazing day everyone, eat too much chocolate and be merry :p https://t.co/y2v4smeym3
+10.0: @harry_styles hi h! i truly admire you for being so kind &amp; humble, thank you for being you! i love you lots, mind following? x97,477
+10.0: rt @potus: from my family to yours, happy easter, and we wish everyone celebrating a blessed and joyful day. https://t.co/fnvcihsmyb
+10.0: rt @sungjongpics: happy birthday to our lovely rapper and dancer! we wish you the best of birthdays??? #happy26thhoyaday | © vavavoom https…
+10.0: @thesupremerk9s @jenniferpughh hope you got her something!! a good woman like this should be just a tad spoiled lol
+-13.0: rt @ellxbxe: if u won't eat cake mix because ur scared of the raw egg ur fucking weak and a pussy bitch
+-12.0: rt @venky9999999: an evil #quran fucking fidayeen suicide bomber has killed 56 people in #lahore muslim #pakistan in the name of allahhttp…
+-12.0: not an asshole who just shit talking and not saying a damn thing...
+-11.0: rt @kxnrx: if im searching up shit for curly hair i dont wanna find a white chick w fake ass waves. gimme the latinas and blacks with natur…
+-11.0: don't know hy batman vs superman got bad reviews cause it was genius, fight scenes were unreal... most bad ass batman ever
+-10.0: y'all bitches so damn phony.. stop trynna be someone you're not tf
+-10.0: wondercon bingo:- eliza/bob talking about blarke- people roasting jroth- jroth saying dumb shit- more dumb shit
+-10.0: that borrowin bred shit is dead kuz people act like they forget shit
+-10.0: @themrsanity once agian your fucking stupid companies, orgs can be funded no matter what system ya fucking jit
+-10.0: rt @damnrealposts: i hate arguing, but i hate holding shit in.
+
+#################################################################################################################################################################
+
+Happiest Breaking Bad actor
+
+1)Read the AFINN-111.txt file and breaking_bad_tweets.csv file.	
+2)For each line in AFINN-111.txt file containing word or phrase followed by sentiment file store it in dictionary scores with term as key and score as value.
+3)Read each row from the breaking_bad_tweets.csv file and read the corresponding username and store the total number of tweets for each user.
+4)Store each username as the key of dictionary and the corresponding tweets as value. Separate each tweet by space. 
+5)Take the initial value of sum as 0 and split each text of the tweet by space and check if that word exits in scores dictionary. if it exits then get the corresponding score and add it to sum if it doesnt exist then add 0 to sum. This way get the sum for each tweet and calculate the average and store it in dictionary along with the username.
+6)Now output each username along with average sentiment file in happiest_actor_NetID.txt file.
+
+The sentiment of all breaking bad actors sorted in decreasing order on the average sentiment score:
+
+1.29 : mrbobodenkirk
+1.11 : quiethandfilms
+1.0 : RjMitte
+0.97 : Krystenritter
+0.93 : betsy_brandt
+0.83 : aaronpaul_8
+0.79 : deanjnorris
+0.71 : BryanCranston
+0.64 : CharlesEbaker
+0.49 : DanielMoncada80
+0.32 : LuisMoncada77
+-0.09183673469387756 : mattjonesisdead
+
+#################################################################################################################################################################
+Happiest State
+
+1)Read the AFINN-111.txt file and streaming_output_full.txt file.
+2)For each line in AFINN-111.txt file containing word or phrase followed by sentiment file store it in dictionary scores with term as key and score as value.
+3)Read the streaming_output_full.txt file to get the tweet. Read the ['place'] object from tweet and append it in place_list list.
+4)Read the text part of the tweet and append it in text_list list.
+5)Create the state_dic dictionary and store the state abbreviation along with state name in it.
+6)For each item in place_list,if item is not Null then append the item to list2 and store the corresponding list2 indexes in text_index_list list.
+7)For element in list2 if the country_code is US and place_type is admin or city then get the state name form ('full_name') field.
+8)Invert the state_dic dictionary to get state name as key and abbreviation as value
+9)For each item in city_list if it exits in inverted dictionary (inv_dic) then add split each tweet by space and check the if word exits in AFINN-111.txt file. IF it exits store its corresponding value in sum else take the value of that term as 0.
+10)Count the total number of tweets for each state.
+11)For each state sum up the sentiment scores for each word of the tweet and calculate the average by dividing it by total number of tweets.
+12)Output the state abbreviation and their corresponding average sentiment scores in the happiest_state_NetID.txt file.
+
+
+5 happiest states along with average sentiment scores:
+
+5.0 : CT
+3.0 : DC
+2.0 : VA
+2.0 : SD
+1.6666666666666667 : TN
+
+
+
+5 Unhappiest states along with average sentiment scores:
+
+-2.25 : MI
+-2.0 : MD
+-2.0 : OK
+-1.5 : KY
+-1.5 : LA
+
+#################################################################################################################################################################
+
+
+
+
+

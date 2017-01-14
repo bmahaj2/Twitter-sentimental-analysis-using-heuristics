@@ -1,0 +1,79 @@
+Report for part A
+
+Submitted by: Bhavya Mahajan
+NetID:        bmahaj2
+
+#################################################################################################################################################################
+Streaming API
+
+1)Go to the directory containing fetch_tweets.py , run the following command to fetch a small random sample of all public statuses and print out each tweet to the console in a json format. Let the command run for about 5 min
+$ python3 fetch_tweets.py -c fetch_samples > streaming_output_full.txt
+2)Then get the first 20 lines by running the following command
+$ head -n 20 streaming_output_full.txt > streaming_output_short_[your NetID].txt
+#################################################################################################################################################################
+Search API
+
+Choose a term that appears in atlest 100 tweets and run the following command on fetch_tweets.py to get tweets related to a term of choice
+$ python3 fetch_tweets.py -c fetch_by_terms -term "[your_chosen_term]" >search_output.txt
+
+For Search API my search term is "Trump". Some example tweets for this term are:
+
+1)Those who endorse Trump are trying to save the country, whereas those who endorse Cruz are trying to save the Republican Party.
+2)RT @watersurf58: Trump threatens to sue over Louisiana delegate count good needs to he won https:\\/\\/t.co\\/53Z1aOT9QD
+3)STOP CAREER POLS #harvard #mittromney #tedcruz #kasich  #hilary #Bernie #jebBUSH #CNN #foxnews &amp; #TRUMP #TRUMPTRAIN https:\\/\\/t.co\\/euoCxECOma
+4)RT @kellylover78: Donald Trump\'s 22-Year-Old Daughter Is Ruling Instagram...\\n\\nhttps:\\/\\/t.co\\/QQUc5kzsJ3"
+5)Ivanka Trump Gives Birth To Baby Boy Theodore James: And then there were eight.On Easter Sund... https:\\/\\/t.co\\/T4GW3ZrGVM #uspolitics #usa"
+
+#################################################################################################################################################################
+User API
+
+1)Read each Breaking Bad's actor's username from user_names.txt and pass that username in the parameter variable of the fetch_by_usernames function.
+2)We need to get 100 tweets for each username and store it in breaking_bad_tweets.csv file.
+3)Use a json object to store the data extracted
+4)From that json object extract the text part of the tweet and store it in breaking_bad_tweets.csv along with corresponding usernames.
+
+#################################################################################################################################################################
+Compute term frequency
+
+1)Read the stopwords.txt file and streaming_output_full.txt file.
+2)For each line in streaming_output_full.txt use json object to store the data extracted and get the corresponding text part of the tweet strip it by " " and append it in separated_words list.
+3)Now for each word in stopwords.txt file append it to stopwords list.
+4)Now for each word in separated_words list if that word exits in stopwords list remove that word from separated_words list.
+5)Now create a dictionary d and for each word in separated_words list if the word exits in dictionary d then increase the corresponding value by 1 else add that word to dictionary and put the value as 1.
+6)Now for each key in d calculate the frequency of the key and store it in separate dictionary and then print each term and its corresponding frequencies.
+
+30 most frequent terms along with their frequencies are:
+
+rt 0.05945101624854754
+easter 0.007448044650170486
+happy 0.0069337295464502735
+#bestfanarmy 0.006686096348362764
+- 0.005409832942834828
+#iheartawards 0.005333638112654056
+get 0.004666933348572299
+&amp; 0.00441930015048479
+like 0.00392403375430977
+i'm 0.0034097186505895574
+don't 0.002895403546869345
+love 0.002628721641236642
+harmos#harmonizers 0.0025334781035106766
+it's 0.0024763319808750977
+one 0.002400137150694325
+#5sosfam 0.002362039735603939
+people 0.0023429910280587463
+go 0.0023048936129683602
+weather 0.0022286987827875877
+u 0.0021144065375164295
+got 0.0020953578299712367
+new 0.0020763091224260434
+good 0.0020763091224260434
+want 0.0020382117073356573
+see 0.002019162999790464
+know 0.001981065584700078
+day 0.0017905785092481475
+time 0.001657237556431796
+@tha5sosfamily: 0.001657237556431796
+back 0.001581042726251024
+
+#################################################################################################################################################################
+
